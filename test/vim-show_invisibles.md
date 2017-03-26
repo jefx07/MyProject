@@ -15,11 +15,13 @@ end of a line.
 
 In Vim, we can display invisible characters by enabling `:set list`. You can
 hide these characters again by running `:set nolist`, or you can toggle between
-showing and hiding them by running `:set list`!. If you want to be able to do
+showing and hiding them by running `:set list!`. If you want to be able to do
 this quickly, you might like to map the toggling command to something more
 convenient. Try putting the following in your .vimrc:
 
-    nmap <leader>l :set list!<CR>
+```
+nmap <leader>l :set list!<CR>
+```
 
 Now you can toggle between showing and hiding invisible characters with `\l`
 (backslash-L). [Note that if you have set your mapleader to a value other than
@@ -34,12 +36,16 @@ We can customise the symbols used to represent invisible characters by changing
 the `listchars` setting. If you want to use the same symbols as TextMate does,
 put the following into your .vimrc:
 
-    set listchars=tab:▸\ ,eol:¬
+```
+set listchars=tab:▸\ ,eol:¬
+```
 
 If you like, you can customise other invisible characters besides tabs and
 end-of-lines. For more information, get help on listchars:
 
-    :help listchars
+```
+:help listchars
+```
 
 ## Colortheme symbols
 
@@ -49,9 +55,11 @@ background, so that they are only just visible, and not too distracting. The
 syntax keyword for an end-of-line is “NonText”, and for tab characters it is
 “SpecialKey”. I have added these lines to my preferred colorscheme file:
 
-    "Invisible character colors
-    highlight NonText guifg=#4a4a59
-    highlight SpecialKey guifg=#4a4a59
+```
+"Invisible character colors
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
+```
 
 ## Aside on inserting literal characters
 
@@ -59,15 +67,19 @@ You shouldn’t have any problems if you copy and paste the `listchars` setting
 from the shownotes into your .vimrc file. But just in case, here is a method for
 inserting any Unicode character directly in Vim.
 
-In insert mode, press ctrl-V, then type u followed by the numeric code for the
+In insert mode, press `ctrl-V`, then type `u` followed by the numeric code for the
 symbol you want to insert. e.g.:
 
-    ctrl-v u00ac inserts '¬' (the not sign)
-    ctrl-v u25b8 inserts '▸' (the triangle symbol)
+```
+ctrl-v u00ac inserts '¬' (the not sign)
+ctrl-v u25b8 inserts '▸' (the triangle symbol)
+```
 
 You can also insert a tab character in insert mode by typing:
 
-    ctrl-v ctrl-i
+```
+ctrl-v ctrl-i
+```
 
 As you can see, the default `^I` symbol that Vim uses to represent a tab
 character is the same as the literal key sequence that we can use to insert this
