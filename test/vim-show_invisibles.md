@@ -47,7 +47,7 @@ Depending on the colorscheme you are using, you may want to change the colors of
 tab and end-of-lines symbols. I prefer to make them close in color to the
 background, so that they are only just visible, and not too distracting. The
 syntax keyword for an end-of-line is “NonText”, and for tab characters it is
-“SpecialKey”. I have added these lines to my prefered colorscheme file:
+“SpecialKey”. I have added these lines to my preferred colorscheme file:
 
     "Invisible character colors
     highlight NonText guifg=#4a4a59
